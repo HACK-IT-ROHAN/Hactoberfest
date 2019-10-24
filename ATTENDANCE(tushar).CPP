@@ -115,13 +115,7 @@ void Search1()
 }
 void Modify1()
 {
-	int q=-1;
-	int a=0;
-	int t;
-	cout<<"\n\tPlease enter the Employee code which is to modified\n\t";
-	cin>>t;
-	fstream dfile("pro1.dat",ios::in|ios::out|ios::binary);
-	while(dfile.read((char*)& A,sizeof(A)))
+	
 	{
 		a++;
 		if(A.getECode3()==t)
@@ -132,11 +126,7 @@ void Modify1()
 			q++;
 		}
 	}
-	if(q==-1)
-		cout<<"Sorry Record not found";
-	dfile.close();
-	getche();
-}
+	
 void Delete1()
 {
 	int b;
@@ -151,8 +141,19 @@ void Delete1()
 			ffile.write((char*)& A,sizeof(A));
 		}
 	}
-	remove("pro1.dat");
-	rename("temp1.dat","pro1.dat");
+	void Display_File2()
+{
+	ifstream bfile("pro2.dat",ios::binary);
+	while(bfile.read((char*)& W,sizeof(W)))
+	{
+		W.PutData6();
+	}
+	bfile.close();
+	cout<<"\n\t";
+	getche();
+}
+
+	
 	efile.close();
 	ffile.close();
 	cout<<"\n\t";
